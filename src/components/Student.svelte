@@ -1,5 +1,7 @@
 <script>
     export let avatar;
+    import Stars from '../components/Stars.svelte';
+    export let rating;
 </script>
 
 
@@ -16,6 +18,7 @@
         <div class="student-foot-content">
             <span><b>Skills </b><slot name="skills"/></span>
             <span><b>Reviews </b><slot name="reviews"/></span>
+            <Stars {rating}/>
         </div>
     </div>
 </div>

@@ -13,7 +13,6 @@
 
 <script>
     import cloneDeep from 'lodash/cloneDeep';
-
     import Student from '../components/Student.svelte';
 
     export let students;
@@ -21,11 +20,10 @@
 
     let value;
 
-    async function filterStudents() {
+    function filterStudents() {
         students = studentsCopy.filter(item => {
             return item.firstName.substr(0, value.length).toUpperCase() == value.toUpperCase();
         })
-
     }
 
 </script>
@@ -40,12 +38,12 @@
 
     <div class="container-wrapper">
         {#each students as {firstName, lastName, catchPhrase, avatar, description, skills, reviews}}
-            <Student {avatar}>
+            <Student {avatar} rating={reviews}>
                 <svelte:fragment slot = "name">{firstName} {lastName}</svelte:fragment>
                 <svelte:fragment slot = "catchPhrase">{catchPhrase}</svelte:fragment>
                 <svelte:fragment slot = "description">{description}</svelte:fragment>
                 <svelte:fragment slot = "skills">{skills}</svelte:fragment>
-                <svelte:fragment slot = "reviews">{reviews}</svelte:fragment>
+                <svelte:fragment slot = "reviews">{reviews/2}</svelte:fragment>
             </Student>
         {/each}
     </div>
