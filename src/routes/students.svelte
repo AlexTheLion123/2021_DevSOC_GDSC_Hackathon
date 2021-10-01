@@ -12,9 +12,21 @@
 
 
 <script>
+    import cloneDeep from 'lodash/cloneDeep';
+
     import Student from '../components/Student.svelte';
 
     export let students;
+    let studentsCopy = cloneDeep(students);
+
+    let value;
+
+    async function filterStudents() {
+        students = studentsCopy.filter(item => {
+            return item.firstName.substr(0, value.length).toUpperCase() == value.toUpperCase();
+        })
+
+    }
 
 </script>
 
@@ -22,7 +34,7 @@
 <div class="container">
 
     <div class="search-content">
-        <input type="text" placeholder="Enter a student name">
+        <input type="text" placeholder="Enter a student name" bind:value on:input={filterStudents}>
         <i class="fas fa-search"></i>
     </div>
 
