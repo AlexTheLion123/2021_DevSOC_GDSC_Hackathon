@@ -3,6 +3,8 @@ console.log(faker.company.catchPhraseAdjective())
 // console.log(faker.commerce.department())
 
 
+
+toggleNavActive()
 const generateUsers = () =>
   [...Array(50)].map(() => {
     const lastName = faker.name.lastName();

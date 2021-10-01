@@ -1,10 +1,22 @@
+<script>
+    let navActiveArray = [true, false, false];
+    function toggleNavActive(index) {
+        for(let i=0; i<navActiveArray.length; i++){
+            navActiveArray[i] = (i==index) ? true : false;
+            navActiveArray = navActiveArray;
+        }
+    }
+</script>
+
 <nav>
     <div class="nav-wrapper">
         <span>Logo</span>
         <div class="links">
-            <a href="/">Home</a>
-            <a href="/jobs">Jobs</a>
-            <a href="/students">Students</a>
+            <ul>
+                <li class:isActive={navActiveArray[0]==true} on:click={() => toggleNavActive(0)}><a href="/">Home</a></li>
+                <li class:isActive={navActiveArray[1]==true} on:click={() => toggleNavActive(1)}><a href="/jobs">Jobs</a></li>
+                <li class:isActive={navActiveArray[2]==true} on:click={() => toggleNavActive(2)}><a href="/students">Students</a></li>
+            </ul>
             <span class="login-button">Login</span>
         </div>
         
@@ -29,6 +41,18 @@
     box-sizing: border-box;
 }
 
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+li {
+    display: inline;
+    width: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
 nav {
     display: grid;
     place-items: center;
@@ -49,11 +73,13 @@ nav {
     height: 50px;
 }
 a {
-    margin: 0 20px;
-    padding: 7px;
     text-decoration: none;
 }
-a:hover {
+li:hover {
+    background: #d0d4d9;
+}
+
+.isActive {
     background: #d0d4d9;
 }
 
