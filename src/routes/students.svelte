@@ -1,3 +1,16 @@
+<script context="module">
+    export async function load({ fetch }) {
+      const res = await fetch('/api');
+  
+    if (res.ok) return {users: await res.json()};
+    return {
+      status: res.status,
+      error: new Error()
+     };
+    }
+</script>
+
+
 <script>
     let name = 'world';
     import Student from '../components/Student.svelte';
@@ -28,6 +41,9 @@
 
     .container-wrapper {
         width: 100%;
-        max-width: 1200px;
+        max-width: 1500px;
+        padding: 50px 150px;
     }
+
+    
 </style>

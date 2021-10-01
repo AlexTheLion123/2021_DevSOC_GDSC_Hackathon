@@ -31,6 +31,9 @@
 nav {
     display: grid;
     place-items: center;
+    background: rgb(241, 241, 241);
+
+    width: 100%;
 }
 
 .nav-wrapper {
@@ -40,7 +43,7 @@ nav {
 
     padding: 60px;
     background: rgb(241, 241, 241);
-    max-width: 1200px;
+    max-width: 1500px;
     width: 100%;
     height: 50px;
 }
