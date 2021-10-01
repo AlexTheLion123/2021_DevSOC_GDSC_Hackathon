@@ -13,7 +13,7 @@
 
 <script>
     import cloneDeep from 'lodash/cloneDeep';
-    import Student from '../components/Student.svelte';
+    import Student from '$lib/components/Student.svelte';
 
     export let students;
     let studentsCopy = cloneDeep(students);

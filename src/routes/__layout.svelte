@@ -13,9 +13,9 @@
         <span>Logo</span>
         <div class="links">
             <ul>
-                <li class:isActive={navActiveArray[0]==true} on:click={() => toggleNavActive(0)}><a href="/">Home</a></li>
-                <li class:isActive={navActiveArray[1]==true} on:click={() => toggleNavActive(1)}><a href="/jobs">Jobs</a></li>
-                <li class:isActive={navActiveArray[2]==true} on:click={() => toggleNavActive(2)}><a href="/students">Students</a></li>
+                <li class:isActive={navActiveArray[0]==true}><a href="/" on:click={() => toggleNavActive(0)}>Home</a></li>
+                <li class:isActive={navActiveArray[1]==true}><a href="/jobs" on:click={() => toggleNavActive(1)}>Jobs</a></li>
+                <li class:isActive={navActiveArray[2]==true}><a href="/students" on:click={() => toggleNavActive(2)}>Students</a></li>
             </ul>
             <span class="login-button">Login</span>
         </div>

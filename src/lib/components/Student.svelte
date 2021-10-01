@@ -1,6 +1,6 @@
 <script>
     export let avatar;
-    import Stars from '../components/Stars.svelte';
+    import Stars from '$lib/components/Stars.svelte';
     export let rating;
 </script>
 
