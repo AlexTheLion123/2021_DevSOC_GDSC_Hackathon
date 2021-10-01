@@ -59,6 +59,13 @@
         border-radius: 5px;
         font-size: 20px;
         margin-right: 10px;
+        border: 1px solid rgb(0,0,0,50%); 
+        box-shadow: 0 0 1px black;
+    }
+
+    input:focus {
+        outline: none;
+        border: 1px solid rgb(148, 212, 255);
     }
 
     i {

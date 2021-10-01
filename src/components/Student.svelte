@@ -43,7 +43,6 @@
         transform: scale(1.05);
     }
 
-
     img {
         height: 4rem;
     }
