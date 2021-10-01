@@ -1,28 +1,66 @@
 <nav>
-Our logo
-<div class="links">
-
-<a sveltekit:prefetch href="/">Home</a>
-<a sveltekit:prefetch href="/jobs">Jobs</a>
-<a sveltekit:prefetch href="/students">Students</a>
-<a sveltekit:prefetch href = "#">Login</a>
-</div>
-
+    <div class="nav-wrapper">
+        <span>Logo</span>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/jobs">Jobs</a>
+            <a href="/students">Students</a>
+            <span class="login-button">Login</span>
+        </div>
+        
+    </div>
 </nav>
 
+<svelte:head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+</svelte:head>
+
+<slot></slot>
+
 <style>
+:global(body) {
+    margin: 0;
+    /* font: 16px/1.6em -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
+    font-family: 'Nunito';
+}
+
+:global(*) {
+    box-sizing: border-box;
+}
+
 nav {
-display: flex;
-justify-content: space-between;
-padding: 10px 30px;
-background: #fafafa;
+    display: grid;
+    place-items: center;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 60px;
+    background: rgb(241, 241, 241);
+    max-width: 1200px;
+    width: 100%;
+    height: 50px;
 }
 a {
-margin: 0 20px;
-padding: 7px;
-text-decoration: none;
+    margin: 0 20px;
+    padding: 7px;
+    text-decoration: none;
 }
 a:hover {
-background: #d0d4d9;
+    background: #d0d4d9;
+}
+
+.login-button {
+    padding: 10px 20px;
+    margin-left: 30px;
+
+    background: rgb(144, 144, 248);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.3rem;
+    
 }
 </style>

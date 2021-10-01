@@ -4,14 +4,17 @@
 
 
 <div class="student">
-<slot name="name"></slot>
-<slot name="description"></slot>
+    <slot name="name"></slot>
+    <slot name="description"></slot>
 </div>
 
 <style>
-    .student{
-        box-shadow: 10px 5px 5px black;
-        margin: 30px;
-}
-
+    .student {
+		width: 300px;
+		border: 1px solid #aaa;
+		border-radius: 2px;
+		box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+		padding: 1em;
+		margin: 0 0 1em 0;
+	}
 </style>
