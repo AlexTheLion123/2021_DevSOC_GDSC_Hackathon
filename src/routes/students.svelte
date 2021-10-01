@@ -2,31 +2,31 @@
     export async function load({ fetch }) {
       const res = await fetch('/api');
   
-    if (res.ok) return {users: await res.json()};
-    return {
-      status: res.status,
-      error: new Error()
-     };
+        if (res.ok) return {props: {students: await res.json()}};
+        return { // if failed
+            status: res.status,
+            error: new Error()
+        };
     }
 </script>
 
 
 <script>
-    let name = 'world';
     import Student from '../components/Student.svelte';
-    const jobs = ["job1", "job2", "job3"];
+
+    export let students;
+
 </script>
 
 <div class="container">
     <div class="container-wrapper">
-        {#each jobs as job}
-            <Student >
-                <div slot = "name">
-                    Home
-                </div>
-                <div slot = "description">
-                    Cape Town
-                </div>
+        {#each students as {firstName, lastName, catchPhrase, avatar, description, skills, reviews}}
+            <Student {avatar}>
+                <svelte:fragment slot = "name">{firstName}, {lastName}</svelte:fragment>
+                <svelte:fragment slot = "catchPhrase">{catchPhrase}</svelte:fragment>
+                <svelte:fragment slot = "description">{description}</svelte:fragment>
+                <svelte:fragment slot = "skills">{skills}</svelte:fragment>
+                <svelte:fragment slot = "reviews">{reviews}</svelte:fragment>
             </Student>
         {/each}
     </div>

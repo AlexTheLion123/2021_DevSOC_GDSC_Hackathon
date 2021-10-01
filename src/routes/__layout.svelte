@@ -66,4 +66,8 @@ a:hover {
     font-size: 1.3rem;
     
 }
+
+.login-button:hover {
+    cursor: pointer;
+}
 </style>

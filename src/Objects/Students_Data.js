@@ -1,3 +1,0 @@
-function Students({name, title, }) {
-
-}
