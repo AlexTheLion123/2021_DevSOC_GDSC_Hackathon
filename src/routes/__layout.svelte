@@ -66,4 +66,7 @@ a:hover {
     font-size: 1.3rem;
     
 }
+:index(h1){
+    color:red
+}
 </style>
