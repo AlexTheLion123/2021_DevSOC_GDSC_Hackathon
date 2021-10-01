@@ -1,30 +1,30 @@
 <script>
-    export let avatar;
+    export let logo;
     import Stars from '$lib/components/Stars.svelte';
     export let rating;
 </script>
 
 
-<div class="student">
+<div class="job">
     <div class="picture-content">
-        <h3><slot name="name"/></h3>
-        <img src={avatar} alt="Avatar">
+        <h3><slot name="companyName"/></h3>
+        <img src={logo} alt="logo">
     </div>
     <div class="text-content">
         <div class="description">
             <slot name="description"/>
-            <h4 class="catchPhrase"><slot name="catchPhrase"/></h4>
+            <slog name="requiredSkills"/>
         </div>
-        <div class="student-foot-content">
-            <span class="skills"><b>Skills </b><slot name="skills"/></span>
-            <span class="reviews"><b>Reviews </b><slot name="reviews"/> <Stars {rating}/></span>
-           
+        <div class="job-foot-content">
+            <span><b># Applicants </b><slot name="numApplicants"/></span>
+            <span><b>Reviews </b><slot name="reviews"/></span>
+            <Stars {rating}/>
         </div>
     </div>
 </div>
 
 <style>
-    .student {
+    .job {
 		width: 100%;
         max-width: 900px;
 		border: 1px solid #aaa;
@@ -39,19 +39,8 @@
         transition: 1s all ease;
 	}
 
-    .student:hover {
+    .job:hover {
         transform: scale(1.05);
-    }
-
-    .student-foot-content {
-        position: relative;
-        bottom: 0;
-        padding: 5px 0;
-        width: 100%;
-        
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 
     img {
@@ -70,8 +59,15 @@
         flex-direction: column;
         justify-content: space-between;
         flex: 1 1 500px;
+    }
+    
+    .job-foot-content {
+        display: flex;
+        justify-content: flex-end;
+    }
 
-        position: relative;
+    .job-foot-content > span {
+        margin: 0 20px;
     }
 
     h3 {
@@ -82,9 +78,5 @@
         margin: 0;
         color: rgb(133, 125, 125);
         font-size: 0.8rem
-    }
-
-    .catchPhrase {
-        visibility: hidden;
     }
 </style>
