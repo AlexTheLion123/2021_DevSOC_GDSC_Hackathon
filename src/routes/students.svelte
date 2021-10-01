@@ -18,11 +18,18 @@
 
 </script>
 
+
 <div class="container">
+
+    <div class="search-content">
+        <input type="text" placeholder="Enter a student name">
+        <i class="fas fa-search"></i>
+    </div>
+
     <div class="container-wrapper">
         {#each students as {firstName, lastName, catchPhrase, avatar, description, skills, reviews}}
             <Student {avatar}>
-                <svelte:fragment slot = "name">{firstName}, {lastName}</svelte:fragment>
+                <svelte:fragment slot = "name">{firstName} {lastName}</svelte:fragment>
                 <svelte:fragment slot = "catchPhrase">{catchPhrase}</svelte:fragment>
                 <svelte:fragment slot = "description">{description}</svelte:fragment>
                 <svelte:fragment slot = "skills">{skills}</svelte:fragment>
@@ -33,6 +40,25 @@
 </div>
 
 <style>
+
+    input {
+        margin-top: 40px;
+        width: 300px;
+        padding: 10px;
+        background: rgb(253, 253, 253);
+        border-radius: 5px;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    i {
+        font-size: 1.3rem;
+    }
+
+    i:hover {
+        color: grey;
+    }
+
     .container {
         width: 100%;
         display: grid;
@@ -43,6 +69,10 @@
         width: 100%;
         max-width: 1500px;
         padding: 50px 150px;
+
+        display: grid;
+        place-items: center;
+
     }
 
     

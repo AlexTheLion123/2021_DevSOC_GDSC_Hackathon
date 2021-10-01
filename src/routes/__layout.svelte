@@ -13,6 +13,7 @@
 
 <svelte:head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+    <script src="https://kit.fontawesome.com/30f595e84f.js" crossorigin="anonymous"></script>
 </svelte:head>
 
 <slot></slot>
