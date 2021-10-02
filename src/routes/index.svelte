@@ -1,5 +1,7 @@
 <script>
   import Icons from "$lib/components/Icons.svelte"
+  import CheckList from "$lib/components/CheckList.svelte"
+  import Contact from "$lib/components/Contact.svelte"
 </script>
 
 <div class="container">
@@ -33,13 +35,15 @@
   <section class="catch-text">
     Lets say something extremely <strong>catchy</strong> and super <strong>cool</strong> sounding over here. mmmmmmmmmmkay
   </section>
-  
-  <h1>Contact Us</h1>
 </div>
 
-
+<section class="check-list">
+  <CheckList/>
+</section>
     
-
+<section class="contact">
+  <Contact/>
+</section>
 
 <style>
 
@@ -127,6 +131,16 @@
     font-size: 1.7rem;
 
     text-align: center;
-    margin: 100px 0;
+    margin: 100px 0 80px 0;
   }
+
+  section.check-list {
+    background: #2e2f6cff;
+    width: 100%;
+    height: 600px;
+
+    border-bottom: 5px solid rgb(100, 200, 100);
+  }
+
+
 </style>
