@@ -39,15 +39,7 @@
 </body>
 
 <style>
-    input {
-        margin-top: 40px;
-        width: 300px;
-        padding: 10px;
-        background: rgb(253, 253, 253);
-        border-radius: 5px;
-        font-size: 20px;
-        margin-right: 10px;
-    }
+
     h1 {
         color: darkblue;
         text-align: center;
@@ -60,11 +52,11 @@
         text-align: center;
     }
     div.item {
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-    width: 120px;
-}
+      vertical-align: top;
+      display: inline-block;
+      text-align: center;
+      width: 120px;
+    }
 img {
     width: 200px;
     height: 50px;

@@ -2,6 +2,7 @@
     export let logo;
     import Stars from '$lib/components/Stars.svelte';
     export let rating;
+    export let id;
 </script>
 
 
@@ -10,17 +11,24 @@
         <h3><slot name="companyName"/></h3>
         <img src={logo} alt="logo">
     </div>
-    <div class="text-content">
-        <div class="description">
-            <slot name="description"/>
-            <slog name="requiredSkills"/>
-        </div>
-        <div class="job-foot-content">
-            <span><b># Applicants </b><slot name="numApplicants"/></span>
-            <span><b>Reviews </b><slot name="reviews"/></span>
-            <Stars {rating}/>
-        </div>
+
+    <div class="description">
+        <slot name="description"/>
     </div>
+
+    <div class="requiredSkills"><b>Required Skills </b><slot name="requiredSkills"/></div>
+
+    <div class="applications">
+        <b># Applicants </b><slot name="numApplicants"/>
+    </div>
+
+    <div class="job-id">
+        {id+1}
+    </div>
+
+    <div class="apply-button">Apply</div>
+
+    <div class="reviews"><b>Reviews </b><slot name="reviews"/><Stars {rating}/></div>
 </div>
 
 <style>
@@ -34,10 +42,51 @@
 		margin: 0 0 1em 0;
 
         display: grid;
-        grid-template: 1fr / 1fr 3fr;
+        grid-template:
+            "picture description description reviews" 2fr
+            "picture requiredSkills ........ button" 1fr
+            "id applications ...... apply" 1fr
+            / 1fr 2fr 2fr 1fr;    
 
         transition: 1s all ease;
 	}
+
+    .picture-content {
+        grid-area: picture;
+    }
+
+    .description {
+        grid-area: description;
+    }
+
+    .requiredSkills {
+        grid-area: requiredSkills;
+    }
+
+    .applications {
+        grid-area: applications;
+    }
+
+    .job-id {
+        grid-area: id;
+    }
+
+    .reviews {
+        grid-area: reviews;
+    }
+
+    .apply-button {
+        padding: 8px 20px;
+        text-align: center;
+
+        background: rgb(144, 144, 248);
+        border-radius: 5px;
+        color: white;
+        font-size: 1rem;
+
+        grid-area: apply;
+    }
+
 
     .job:hover {
         transform: scale(1.05);
@@ -45,29 +94,6 @@
 
     img {
         height: 4rem;
-    }
-    
-
-    .picture-content, .text-content {
-        padding: 5px; 
-        flex: 1 1 150px;
-
-    }
-    .text-content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex: 1 1 500px;
-    }
-    
-    .job-foot-content {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .job-foot-content > span {
-        margin: 0 20px;
     }
 
     h3 {

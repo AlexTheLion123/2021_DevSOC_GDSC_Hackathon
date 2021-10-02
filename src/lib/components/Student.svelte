@@ -18,7 +18,6 @@
         <div class="student-foot-content">
             <span class="skills"><b>Skills </b><slot name="skills"/></span>
             <span class="reviews"><b>Reviews </b><slot name="reviews"/> <Stars {rating}/></span>
-           
         </div>
     </div>
 </div>
@@ -52,6 +51,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        margin: 15px 0 0 0;
     }
 
     img {
@@ -85,6 +86,6 @@
     }
 
     .catchPhrase {
-        visibility: hidden;
+        display: none;
     }
 </style>

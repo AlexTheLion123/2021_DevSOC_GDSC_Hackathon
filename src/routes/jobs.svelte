@@ -28,13 +28,13 @@
 
 <div class="container">
     <div class="search-content">
-        <input type="text" placeholder="Enter a student name" bind:value on:input={filterJobs}>
+        <input type="text" placeholder="Enter a job id" bind:value on:input={filterJobs}>
         <i class="fas fa-search"></i>
     </div>
     
     <div class="container-wrapper">
-        {#each jobs as {logo, companyName, requiredSkills, jobDescription, numApplicants, reviews}}
-            <Job {logo} rating={reviews}>
+        {#each jobs as {logo, companyName, requiredSkills, jobDescription, numApplicants, reviews}, id}
+            <Job {logo} rating={reviews} {id}>
                 <svelte:fragment slot = "companyName">{companyName}</svelte:fragment>
                 <svelte:fragment slot = "description">{jobDescription}</svelte:fragment>
                 <svelte:fragment slot = "requiredSkills">{requiredSkills}</svelte:fragment>
