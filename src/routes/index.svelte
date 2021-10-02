@@ -3,8 +3,7 @@
   import CheckList from "$lib/components/CheckList.svelte"
   import Contact from "$lib/components/Contact.svelte"
   import RegForm from "$lib/components/RegForm.svelte"
-  import LogInForm from "$lib/components/LogInForm.svelte"
-  import { isLogInShown } from "$lib/stores/stores"
+  
 
   let isFormShown = false;
 </script>
@@ -25,7 +24,7 @@
       many challenges.
       <br>
       <br>
-      With (name_of_solution), it provides entrepreneurs and students in their penultimate and
+      With Varsity Plug, it provides entrepreneurs and students in their penultimate and
       final year a place to connect and work with each other.
     </p>
 
@@ -38,7 +37,7 @@
   </section>
 
   <section class="catch-text">
-    Lets say something extremely <strong>catchy</strong> and super <strong>cool</strong> sounding over here. mmmmmmmmmmkay
+    The platform to get you the <strong>experience</strong> and <strong>expertise.</strong>
   </section>
 </div>
 
@@ -48,11 +47,7 @@
 </div>
 {/if}
 
-{#if $isLogInShown}
-<div class="form-modal">
-  <LogInForm/>
-</div>
-{/if}
+
 
 <section class="check-list">
   <CheckList/>
@@ -63,17 +58,7 @@
 </section>
 
 <style>
-  .form-modal {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom:0;
-    left: 0;
-    background: rgb(0,0,0,60%);
-
-    display: grid;
-    place-items: center;
-  }
+  
 
   * {
     margin: 0;
