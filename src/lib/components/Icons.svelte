@@ -1,6 +1,6 @@
 <div class="icon-container">
   <i class="fas fa-hands-helping"></i>
-  <h2 class="caption">Students gain real life experience</h2>
+  <h2 class="caption">Students gain work experience</h2>
 </div>
 
 <div class="icon-container">
@@ -10,7 +10,7 @@
 
 <div class="icon-container">
   <i class="fas fa-users"></i>
-  <h2 class="caption">Forget what was meant to be here</h2>
+  <h2 class="caption">Let your skills shine to interested stakeholders</h2>
 </div>
 
 

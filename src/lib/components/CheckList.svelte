@@ -3,21 +3,21 @@
 <div class="container">
     <div class="header">
         <h2>
-            Lets put some more content over herewefkalsjfaslkfj asf
+            Why use Varsity Plug
         </h2>
     
         <div class="grid-content">
                 <i class="fas fa-check-circle"></i>
-                <p>sadfl; iksfjasd;lk jfs;lkfj sldkfjsd;aklfj sa;lkfjs ;aklfjas</p>
+                <p>Cater to both the needs of startups and students.</p>
                 
                 <i class="fas fa-check-circle"></i>
-                <p>sadfl; iksfjasd;lk jfs;lkfj sldkfjsd;aklfj sa;lkfjs ;aklfjas</p>
+                <p>Get to work with students equipped with the necessary tools for your job.</p>
                 
                 <i class="fas fa-check-circle"></i>
-                <p>sadfl; iksfjasd;lk jfs;lkfj sldkfjsd;aklfj sa;lkfjs ;aklfjas</p>
+                <p>Showcase your portfolio to potential employers.</p>
                 
                 <i class="fas fa-check-circle"></i>
-                <p>sadfl; iksfjasd;lk jfs;lkfj sldkfjsd;aklfj sa;lkfjs ;aklfjas</p>
+                <p>Let your skills earn you an income.</p>
         </div>
 
         <div class="register-button">Register</div>

@@ -8,12 +8,12 @@
             navActiveArray = navActiveArray;
         }
     }
-
+    import LogInForm from "$lib/components/LogInForm.svelte"
 </script>
 
 <nav>
     <div class="nav-wrapper">
-        <span>Logo</span>
+        <span><h1>Varsity Plug</h1></span>
         <div class="links">
             <ul>
                 <li class:isActive={navActiveArray[0]==true}><a href="/" on:click={() => toggleNavActive(0)}>Home</a></li>
@@ -28,6 +28,12 @@
     </div>
 </nav>
 
+{#if $isLogInShown}
+<div class="form-modal">
+  <LogInForm/>
+</div>
+{/if}
+
 <svelte:head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
     <script src="https://kit.fontawesome.com/30f595e84f.js" crossorigin="anonymous"></script>
@@ -36,6 +42,19 @@
 <slot></slot>
 
 <style>
+
+.form-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left: 0;
+    background: rgb(0,0,0,60%);
+    z-index: 100;
+    display: grid;
+    place-items: center;
+}
+
 :global(body) {
     margin: 0;
     /* font: 16px/1.6em -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
