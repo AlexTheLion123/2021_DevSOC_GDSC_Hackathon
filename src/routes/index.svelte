@@ -91,6 +91,11 @@
       display: grid;
       place-items: center;
   }
+
+  .register-button:hover {
+    cursor: pointer;
+  }
+
   .main-heading {
     grid-area: mainHeading;
     align-self: start;
