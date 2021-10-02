@@ -2,6 +2,11 @@
   import Icons from "$lib/components/Icons.svelte"
   import CheckList from "$lib/components/CheckList.svelte"
   import Contact from "$lib/components/Contact.svelte"
+  import RegForm from "$lib/components/RegForm.svelte"
+  import LogInForm from "$lib/components/LogInForm.svelte"
+  import { isLogInShown } from "$lib/stores/stores"
+
+  let isFormShown = false;
 </script>
 
 <div class="container">
@@ -24,7 +29,7 @@
       final year a place to connect and work with each other.
     </p>
 
-    <div class="register-button">Register</div>
+    <div class="register-button" on:click={()=>isFormShown=true}>Register</div>
     
   </section>
   
@@ -37,6 +42,18 @@
   </section>
 </div>
 
+{#if isFormShown}
+<div class="form-modal">
+  <RegForm bind:isFormShown/>
+</div>
+{/if}
+
+{#if $isLogInShown}
+<div class="form-modal">
+  <LogInForm/>
+</div>
+{/if}
+
 <section class="check-list">
   <CheckList/>
 </section>
@@ -46,6 +63,17 @@
 </section>
 
 <style>
+  .form-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left: 0;
+    background: rgb(0,0,0,60%);
+
+    display: grid;
+    place-items: center;
+  }
 
   * {
     margin: 0;

@@ -1,4 +1,6 @@
 <script>
+    import { isLogInShown } from "$lib/stores/stores"
+
     let navActiveArray = [true, false, false];
     function toggleNavActive(index) {
         for(let i=0; i<navActiveArray.length; i++){
@@ -6,6 +8,7 @@
             navActiveArray = navActiveArray;
         }
     }
+
 </script>
 
 <nav>
@@ -17,7 +20,9 @@
                 <li class:isActive={navActiveArray[1]==true}><a href="/jobs" on:click={() => toggleNavActive(1)}>Jobs</a></li>
                 <li class:isActive={navActiveArray[2]==true}><a href="/students" on:click={() => toggleNavActive(2)}>Students</a></li>
             </ul>
-            <span class="login-button">Login</span>
+            <span class="login-button" on:click={() => {
+                $isLogInShown = true
+            }}>Login</span>
         </div>
         
     </div>
