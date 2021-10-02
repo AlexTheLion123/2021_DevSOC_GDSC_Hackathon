@@ -29,6 +29,10 @@
   <section class="icons">
     <Icons/>
   </section>
+
+  <section class="catch-text">
+    Lets say something extremely <strong>catchy</strong> and super <strong>cool</strong> sounding over here. mmmmmmmmmmkay
+  </section>
   
   <h1>Contact Us</h1>
 </div>
@@ -116,6 +120,13 @@
   section.icons {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
+    margin: 80px 0;
+  }
+
+  section.catch-text {
+    font-size: 1.7rem;
+
+    text-align: center;
+    margin: 100px 0;
   }
 </style>

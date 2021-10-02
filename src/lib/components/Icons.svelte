@@ -10,7 +10,7 @@
 
 <div class="icon-container">
   <i class="fas fa-users"></i>
-  <h2 class="caption">Entrepreneurs work on solutioins with skilfull youth</h2>
+  <h2 class="caption">Forget what was meant to be here</h2>
 </div>
 
 
@@ -23,7 +23,7 @@
   i {
     padding: 10px;
     font-size: 5rem;
-    color: rgb(82, 0, 82);
+    color: rgb(30, 30, 87);
     align-self: center;
   }
 
