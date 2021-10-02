@@ -21,14 +21,14 @@
 
     function filterJobs() {
         jobs = jobsCopy.filter(item => {
-            return item.firstName.substr(0, value.length).toUpperCase() == value.toUpperCase();
+            return item.companyName.substr(0, value.length).toUpperCase() == value.toUpperCase();
         })
     }
 </script>
 
 <div class="container">
     <div class="search-content">
-        <input type="text" placeholder="Enter a job id" bind:value on:input={filterJobs}>
+        <input type="text" placeholder="Enter a company name" bind:value on:input={filterJobs}>
         <i class="fas fa-search"></i>
     </div>
     

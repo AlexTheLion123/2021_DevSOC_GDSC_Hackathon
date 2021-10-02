@@ -53,6 +53,10 @@
 
     .picture-content {
         grid-area: picture;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .description {
@@ -61,18 +65,22 @@
 
     .requiredSkills {
         grid-area: requiredSkills;
+        align-self: end;
     }
 
     .applications {
         grid-area: applications;
+        align-self: end;
     }
 
     .job-id {
         grid-area: id;
+        align-self: end;
     }
 
     .reviews {
         grid-area: reviews;
+        justify-self: center;
     }
 
     .apply-button {
@@ -97,7 +105,7 @@
     }
 
     h3 {
-        margin: 0;
+        margin: 0 0 10px 0;
         font-size: 1rem;
     }
     h4 {

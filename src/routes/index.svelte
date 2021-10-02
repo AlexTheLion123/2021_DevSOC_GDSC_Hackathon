@@ -1,81 +1,121 @@
-<body>
-    <h1>Our Mission</h1>
+<script>
+  import Icons from "$lib/components/Icons.svelte"
+</script>
+
+<div class="container">
+  <section class="main-content">
     
-    <h2>Problem Statement</h2>
-    <p>
+    <div class="main-picture">
+      <img id="student-image" src="src/lib/images/student.png" alt="Mountains">
+    </div>
+
+    <h1 class = "main-heading">Helping students help you</h1>
+    <p class = "main-text">
         Many job requirements demand some level of experience from entry level positions,
-        yet newly graduate students lack such an experience.
-    </p>
-    <p>
+        yet newly graduate students lack such an experience.<br>
         Many entrepreneurs and startups struggle with raising capital, yet at the beginning
-        of their entrepreneurial journey, they are tasked with many roles, where some come with 
-        many challenges.
+      of their entrepreneurial journey, they are tasked with many roles, where some come with 
+      many challenges.
+      <br>
+      <br>
+      With (name_of_solution), it provides entrepreneurs and students in their penultimate and
+      final year a place to connect and work with each other.
     </p>
 
-    <h2>Solution</h2>
-    <p>
-        With (name_of_solution), it provides entrepreneurs and students in their penultimate and
-        final year a place to connect and work with each other.
-    </p>
-
-    <h1>Use Cases</h1>
-    <div class="row">
-        <div class="column">
-          <img src="src/lib/images/code_image.png" alt="" style="width:100%">
-          <span class="caption">Students gain real life experience</span>
-        </div>
-        <div class="column">
-          <img src="src/lib/images/business_image.png" alt="" style="width:100%">
-          <span class="caption">Entrepreneurs work on solutioins with skilfull youth</span>
-        </div>
-        <div class="column">
-          <img src="src/lib/images/employer_image.png" alt="Mountains" style="width:100%">
-          <span class="caption">Opportunity to showcase student's experience to potential employers.</span>
-        </div>
-      </div>
+    <div class="register-button">Register</div>
     
-      <h1>Contact Us</h1>
+  </section>
+  
+  <section class="icons">
+    <Icons/>
+  </section>
+  
+  <h1>Contact Us</h1>
+</div>
 
-</body>
+
+    
+
 
 <style>
 
-    h1 {
-        color: darkblue;
-        text-align: center;
-    }
-    h2 {
-        color: lightblue;
-        text-align: center;
-    }
-    body {
-        text-align: center;
-    }
-    div.item {
-      vertical-align: top;
-      display: inline-block;
-      text-align: center;
-      width: 120px;
-    }
-img {
-    width: 200px;
-    height: 50px;
-    background-color: grey;
-}
-.caption {
-    text-align: center;
-}
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 15px;
-}
+  * {
+    margin: 0;
+  }
+  .container {
+    margin: auto;
+    padding: 50px;
+    max-width: 1500px;
 
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+  }
+
+  .main-content {
+    display: grid;
+    grid-template:
+      "mainPicture mainHeading" 1fr
+      "mainPicture mainText" 5fr
+      "mainPicture registerButton" 2fr
+      / 1fr 1fr;
+  }
+
+  .main-content #student-image {
+    width: 95%;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .register-button {
+      width: 200px;
+      height: 50px;
+      text-align: center;
+
+      background: rgb(144, 144, 248);
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5rem;
+
+      grid-area: registerButton;
+      place-self: center;
+
+      display: grid;
+      place-items: center;
+  }
+  .main-heading {
+    grid-area: mainHeading;
+    align-self: start;
+    margin: 0;
+  } 
+
+  .main-text {
+    grid-area: mainText;
+    align-self: start;
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .main-picture {
+    grid-area: mainPicture;
+    justify-self: start;
+  }
+
+  div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+  }
+  img {
+      width: 200px;
+      height: 50px;
+      background-color: grey;
+  }
+
+  section.icons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
 </style>
