@@ -3,7 +3,6 @@
   import CheckList from "$lib/components/CheckList.svelte"
   import Contact from "$lib/components/Contact.svelte"
   import RegForm from "$lib/components/RegForm.svelte"
-  
 
   let isFormShown = false;
 </script>
@@ -58,7 +57,17 @@
 </section>
 
 <style>
-  
+  .form-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left: 0;
+    background: rgb(0,0,0,60%);
+    z-index: 100;
+    display: grid;
+    place-items: center;
+}
 
   * {
     margin: 0;
